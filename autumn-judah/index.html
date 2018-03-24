@@ -13,19 +13,18 @@
 
 
     <script id="articles-template" type="text/x-handlebars-template">
-      <div>
-      <article class="template" data-author="{{author}}" data-category="{{category}}">
+      <article class="" data-author="{{author}}" data-category="{{category}}">
         <header>
           <h1>{{{title}}}</h1>
           <div class="byline">
            <address><a href="{{authorUrl}}">{{author}}</a></address>
             <time pubdate datetime="{{publishedOn}}">{{publishedOn}}</time>
+            <p>publishedon: {{publishStatus}}</p>
           </div>
         </header>
         <section class="article-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
-    </div>
     </script>
 
     <!--
