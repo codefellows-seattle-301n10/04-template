@@ -1,6 +1,6 @@
 # Project Name
 
-**Author**: Your Name Goes Here
+**Author**: Eric Singleton Anna Boyatyuk
 **Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
@@ -17,6 +17,7 @@
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.-->
 03-24-2018 9:15am - Forked and cloned repo from the class repository, set up branches
+03-24-2018 9:30am - Created the handlebars.js template on the index page
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
