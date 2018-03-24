@@ -28,9 +28,11 @@ articleView.populateFilters = () => {
 
 articleView.handleAuthorFilter = () => {
   $('#author-filter').on('change', function() {
+    // console.log("author filter change");
     if ($(this).val()) {
       $('article').hide();
       $(`article[data-author="${$(this).val()}"]`).fadeIn();
+      // console.log(`article[data-author="${$(this).val()}"]`);
     } else {
       $('article').fadeIn();
       $('article.template').hide();
@@ -78,7 +80,7 @@ articleView.setTeasers = () => {
   });
 };
 
-$(document).ready(function() {
+$(document).ready(() => {
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
