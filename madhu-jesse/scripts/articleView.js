@@ -2,10 +2,10 @@
 
 let articleView = {};
 
-// TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
+// TODONE: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+// The ES6 arrow function syntax uses “lexical scoping” to figure out what the value of “this” should be. 'this' in arrow function goes out of current onject context rather it references to the main window object.
 
 articleView.populateFilters = () =>{
   $('article').each(function() {
@@ -78,7 +78,7 @@ articleView.setTeasers = () => {
   });
 };
 
-$(document).ready(function() {
+$(document).ready(() => {
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
