@@ -42,7 +42,6 @@ rawData.sort((a,b) => {
 
 rawData.forEach(articleObject => {
   articles.push(new Article(articleObject));
-  console.log(articleObject);
 });
 
 articles.forEach(article => {

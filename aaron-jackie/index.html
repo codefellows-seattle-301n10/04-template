@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8">
     <title>Lab 4</title>
@@ -14,28 +15,30 @@
     <!--
       TODONE: Add a script tag to hold the Handlebars template.
         - Be sure to give it a meaningful id attribute.
+        <h1>Title</h1>
+         <div class=“byline”>
+           By <address><a href=“”>Author Name</a></address>
+           published <time pubdate datetime=“2000-01-01”>Publish Time</time>
+        </div>
         - Move your old template structure to here. Remember that this template needs to have the same structure as the old one!
         - Insert placeholder keys.
         - If your object doesn't have values you need yet, you can add those properties in the model.
     -->
     <script id="article-template" type="text/x-handlebars-template">
-      <div class="entry">
-        <h1>{{title}}</h1>
-        <div class="by-line">
-          By {{{author}}}
-          published {{{time}}}
-          {{{body}}}
-        </div>
-      </div>
+      <article class="template" data-category="{{category}}" data-author="{{author}}">
+        <header>
+          <h1>{{Title}}</h1>
+          <div class="byline">
+            By <address><a href="">{{author}}</a></address>
+            published <time pubdate datetime="2000-01-01">{{publishedOn}} Publish Time</time>
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
     </script>
   </head>
-  <!-- <header>
-         <h1>Title</h1>
-         <div class=“byline”>
-           By <address><a href=“”>Author Name</a></address>
-           published <time pubdate datetime=“2000-01-01”>Publish Time</time>
-         </div>
-       </header> -->
+
   <body>
     <header class="site-header clearfix">
       <section class="heading-group-h1">
@@ -47,10 +50,18 @@
       <nav class="main-nav">
         <div class="icon-menu"></div>
         <ul>
-          <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
-          <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
-          <li><a href="http://twitter.com/brookr" target="_blank" class="icon-twitter3"> Twitter</a></li>
-          <li><a href="http://github.com/brookr" target="_blank" class="icon-github"> GitHub</a></li>
+          <li class="tab" data-content="articles">
+            <a href="#" class="icon-home"> Home</a>
+          </li>
+          <li class="tab" data-content="about">
+            <a href="#" class="icon-address-book"> About</a>
+          </li>
+          <li>
+            <a href="http://twitter.com/brookr" target="_blank" class="icon-twitter3"> Twitter</a>
+          </li>
+          <li>
+            <a href="http://github.com/brookr" target="_blank" class="icon-github"> GitHub</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -91,9 +102,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- TODONE: Include Handlebars.JS from a CDN -->
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
   </body>
+
 </html>

@@ -5,11 +5,11 @@ let articleView = {};
 // TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+// Arrow functions take global 'this' and make it more accessible to local iterations whether or not the function needed a global 'this.'  Arrow functions do not bind their own 'this', therefore the functions within the articleView functions could not be refactored.
 
 articleView.populateFilters = () => {
   $('article').each(function() {
-    if (!$(this).hasClass('template')) {
+    if ($(this).hasClass('template')) {
       let val = $(this).find('address a').text();
       let optionTag = `<option value="${val}">${val}</option>`;
 
@@ -30,6 +30,7 @@ articleView.handleAuthorFilter = () => {
   $('#author-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
+      $('article[data-content="about"]').hide();
       $(`article[data-author="${$(this).val()}"]`).fadeIn();
     } else {
       $('article').fadeIn();
@@ -58,7 +59,9 @@ articleView.handleMainNav = () => {
     $(`#${$(this).data('content')}`).fadeIn();
   });
 
-  $('.main-nav .tab:first').click();
+  $('.main-nav .tab:first').on('click', function () {
+    $('article').fadeIn();
+  });
 };
 
 articleView.setTeasers = () => {
