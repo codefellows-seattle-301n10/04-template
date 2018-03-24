@@ -5,7 +5,7 @@ let articleView = {};
 // TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// Arrow functions take global 'this' and make it more accessible to local iterations whether or not the function needed a global 'this.'  Arrow functions do not bind their own 'this', therefore the functions within the articleView functions could not be refactored.
+// Arrow functions take global 'this' and make it more accessible to local iterations whether or not the function needed a global 'this.'  Arrow functions do not bind their own 'this', therefore the functions within the articleView functions, that used 'this', could not be refactored.
 
 articleView.populateFilters = () => {
   $('article').each(function() {
