@@ -3,20 +3,14 @@
 let articles = [];
 
 function Article (rawDataObj) {
-  this.author = rawDataObj.author;
-  this.authorUrl = rawDataObj.authorUrl;
-  this.title = rawDataObj.title;
-  this.category = rawDataObj.category;
-  this.body = rawDataObj.body;
-  this.publishedOn = rawDataObj.publishedOn;
+  Object.assign(this,rawDataObj);
 }
+
 
 Article.prototype.toHtml = function() {
   // TODONE: Use Handlebars to render your articles. Get your template from the DOM and "compile" your template with Handlebars.
-  let template = $('#article-template').text();
-  // console.log(template);
+  let template = $('#article-template').html();
   let templateRender = Handlebars.compile(template);
-  // console.log(templateRender);
   // REVIEW: If your template will use properties that aren't on the object yet, add them.
   // Since your template can't hold any JS logic, we need to execute the logic here.
   // The result is added to the object as a new property, which can then be referenced by key in the template.
@@ -45,10 +39,8 @@ rawData.sort((a,b) => {
 
 rawData.forEach(articleObject => {
   articles.push(new Article(articleObject));
-  // console.log(articleObject);
 });
 
 articles.forEach(article => {
-  // $('#blog').append(article.toHtml());
-  console.log(article.toHtml());
+  $('#articles').append(article.toHtml());
 });
