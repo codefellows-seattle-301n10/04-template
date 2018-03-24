@@ -1,10 +1,10 @@
-# jQuery Events
+# HTML Templating w/Handlebars JS
 
 **Author**: Haley Mendoza / Lina Mukherjee
 **Version**: 1.0.0 
 
 ## Overview
-A continuation of work on a blog webpage that pulls from a blog articles data array and creates blog posts based on a given template. This webpage integrates filters using jquery to respond to user input based on author and category of the blog post(s) they would like to use. 
+A continuation of work on a blog webpage that pulls from a blog articles data array and creates blog posts based on a given template. This webpage integrates filters using jquery to respond to user input based on author and category of the blog post(s) they would like to use. We integrated Handlebars into this project for our articles template.
 
 
 ## Getting Started
@@ -17,18 +17,12 @@ Libraries: jquery
 Technologies: Mac OS, Git, GitHub 
 
 ## Change Log
-  ### 03-21-18
-  Linked our script files.
-  Used jQuery to add the author name as an additional data-attribute.
-  Refactored concatenation strings using template literals.
-  Hid articles and only showed the ones that match for author.
-  ### 03-22-18
-  Hide articles and only showed ones that match for category.  
-  Added functionality to our nav bar by building a selector string with the correct ID based on th element that was selected by the user
-  Added .read-on link to reveal all hidden elements when.
-  #### 03-23-18
-  Revised code to ensure everything is correct. 
-  Added README and PR template. 
+  ### 03-24-18
+  1. First, we linked the Handlebars.js file to our mark up.
+  2. Next, we added our Handlebars template structure for our blog articles.
+  3. Then, we used Handlebars to render our articles.
+  4. We refactored methods into arrow functions in articleView.js
+
 
 ## Credits and Collaborations
-Code Fellows 301 n10 instructional team and classmates
+Code Fellows 301 n10 instructional team and TA - Catherine Looper

@@ -2,10 +2,10 @@
 
 let articleView = {};
 
-// TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
+// TODONE: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
-// COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+// COMMENTED: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
+// An arrow function expression has a shorter syntax than a function expression and does not have its own this. Arrow functions capture the this value of the enclosing context. 'this' inside the arrow function would have the same value as it did right before the arrow function was assigned.
 
 articleView.populateFilters = () => {
   $('article').each(function() {
