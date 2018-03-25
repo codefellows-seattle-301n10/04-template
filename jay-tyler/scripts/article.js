@@ -12,13 +12,13 @@ function Article (rawDataObj) {
 }
 
 Article.prototype.toHtml = function() {
-  // TODO: Use Handlebars to render your articles. Get your template from the DOM and "compile" your template with Handlebars.
+  // TODOne: Use Handlebars to render your articles. Get your template from the DOM and "compile" your template with Handlebars.
 
   let theTemplateScript = $('#articles-template').html();
 
   let theTemplate = Handlebars.compile(theTemplateScript);
 
-  // REVIEW: If your template will use properties that aren't on the object yet, add them.
+  // REVIEWed: If your template will use properties that aren't on the object yet, add them.
   // Since your template can't hold any JS logic, we need to execute the logic here.
   // The result is added to the object as a new property, which can then be referenced by key in the template.
   // For example, you might want to display how old a post is, or say "(draft)" if it has no publication date:
@@ -26,19 +26,20 @@ Article.prototype.toHtml = function() {
 
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
 
-  // REVIEW: The ternary operator above accomplishes this same logic.
+  // REVIEWed: The ternary operator above accomplishes this same logic.
   // if(this.publishedOn) {
   //   this.publishStatus = `published ${this.daysAgo} days ago`;
   // } else {
   //   this.publishStatus = '(draft)';
   // }
 
-  // TODO: Use the method that Handlebars gave you to return your filled-in html template for THIS article.
+  // TODOne: Use the method that Handlebars gave you to return your filled-in html template for THIS article.
   return theTemplate(this);
 };
 
-// COMMENT: Why are there parentheses around "(a,b)" in the .sort() method, but not around the "articleObject" or "article" arguments in the .forEach() methods?
-// PUT YOUR RESPONSE HERE
+// COMMENTed: Why are there parentheses around "(a,b)" in the .sort() method, but not around the "articleObject" or "article" arguments in the .forEach() methods?
+// Sort requires multiple input paramters; and the parenthese hold these together.  .foreach is a method that iterates through an array.
+
 rawData.sort((a,b) => {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
