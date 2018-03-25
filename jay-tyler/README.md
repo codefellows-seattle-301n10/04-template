@@ -22,4 +22,7 @@ The blog utilizes vanilla JS, HTML, CSS.  We linked jQuery and handlebars from C
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
---> ##Jay Silvas and Tyler Confalone worked on the lab.  
+--> 
+03-24-2018 6:45pm - Application is working and all TODO, Comments and reveiews have been addressed 
+
+## Jay Silvas and Tyler Confalone worked on the lab.  
