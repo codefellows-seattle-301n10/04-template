@@ -5,8 +5,8 @@ let articleView = {};
 // TODONE: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
-
+// because the "this" object in an arrow function is based on the scope it is defined in. You can use it if this is defined in funtion or it'll point to the parent this object. colsole.log show us that it is a 'window object'
+// console.log(this);
 articleView.populateFilters = () => {
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
